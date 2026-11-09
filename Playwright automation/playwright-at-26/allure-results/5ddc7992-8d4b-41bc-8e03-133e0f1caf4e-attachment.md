@@ -1,0 +1,102 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: T15Multi_Window_page.spec.js >> test2
+- Location: tests\T15Multi_Window_page.spec.js:35:3
+
+# Error details
+
+```
+Test timeout of 30000ms exceeded.
+```
+
+```
+Error: expect(locator).toHaveText(expected) failed
+
+Locator:  locator('h3')
+Expected: "New Windows"
+Received: "New Window"
+
+Call log:
+  - Expect "toHaveText" locator('h3') with timeout 5000ms
+  - waiting for locator('h3')
+    5 × locator resolved to <h3>New Window</h3>
+      - unexpected value "New Window"
+  - Test timeout of 30000ms exceeded.
+
+```
+
+```yaml
+- heading "New Window" [level=3]
+```
+
+# Test source
+
+```ts
+  1  | const { test, expect, chromium } = require('@playwright/test');
+  2  | 
+  3  | test.skip('Handle Pages/Windows', async () => {
+  4  |     // Launch the browser
+  5  |     const browser = await chromium.launch();
+  6  |   
+  7  |     // Create a new context (a single browsing session)
+  8  |     const context = await browser.newContext();
+  9  |   
+  10 |     // Create two pages
+  11 |     const page1 = await context.newPage();
+  12 |     await page1.goto("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
+  13 |     console.log(await page1.title());
+  14 |     await expect(page1).toHaveTitle('OrangeHRM')
+  15 | 
+  16 |     // Start waiting for new page before clicking. 
+  17 |     const pagePromise = context.waitForEvent('page');
+  18 |     await page1.locator('//a[normalize-space()="OrangeHRM, Inc"]').click();
+  19 | 
+  20 |     const newPage = await pagePromise;
+  21 |     console.log(await newPage.title());
+  22 |     await expect(newPage).toHaveTitle('OrangeHRM: All in One HR Software for Businesses | OrangeHRM')
+  23 | 
+  24 |     await page1.waitForTimeout(2000);
+  25 |     await newPage.waitForTimeout(2000);
+  26 | 
+  27 |     // Get pages of a browser context
+  28 |     const allPages = context.pages();
+  29 |     console.log("No.OF pages created.....",allPages.length)
+  30 | 
+  31 |     await browser.close();
+  32 |         
+  33 |   })
+  34 | 
+  35 |   test('test2', async({page})=>{
+  36 |       
+  37 |     await page.goto('https://the-internet.herokuapp.com/windows');
+  38 | 
+  39 |     await expect(page.locator('h3')).toHaveText('Opening a new window');
+  40 | 
+  41 |     //array destructuring - take the first elemtn form array and store 
+  42 |     const [childPage] = await Promise.all([ //operation-1
+  43 | 
+  44 |       //st2
+  45 |       page.context().waitForEvent('page'), page.locator('text=Click Here').click()]);
+  46 | 
+  47 |       //awa st-3
+  48 |       await childPage.waitForLoadState()
+  49 |       console.log('child windw', await childPage.title());
+  50 | 
+  51 | //st4 verify new child wind 
+> 52 | await expect(childPage.locator('h3')).toHaveText('New Windows')
+     |                                       ^ Error: expect(locator).toHaveText(expected) failed
+  53 | 
+  54 | //st5
+  55 | page.bringToFront();
+  56 | console.log('back to parent page', page.title());
+  57 | 
+  58 | //st6
+  59 | await childPage.close();
+  60 |   });
+```

@@ -1,0 +1,17 @@
+2026-08-11 12:49:55 [main] INFO  com.framework.base.Hooks - =========== STARTING SCENARIO: Successfully retrieve paginated list of users ===========
+2026-08-11 12:49:55 [main] INFO  com.framework.base.BaseApiClient - GET /users with query param page=1 using [JWT] auth
+2026-08-11 12:49:56 [main] INFO  com.framework.auth.JwtAuthStrategy - Applying JWT Bearer Authentication
+2026-08-11 12:49:59 [main] INFO  com.framework.base.Hooks - =========== FINISHED SCENARIO: Successfully retrieve paginated list of users | STATUS: FAILED ===========
+2026-08-11 13:02:32 [TestNG-PoolService-3] INFO  com.framework.base.BaseApiClient - POST /posts/ using [JWT] auth
+2026-08-11 13:02:32 [TestNG-PoolService-5] INFO  com.framework.base.BaseApiClient - POST /posts/ using [JWT] auth
+2026-08-11 13:02:32 [TestNG-PoolService-4] INFO  com.framework.base.BaseApiClient - POST /posts/ using [JWT] auth
+2026-08-11 13:02:32 [TestNG-PoolService-9] INFO  com.framework.base.BaseApiClient - PUT /posts//2 using [JWT] auth
+2026-08-11 13:02:32 [TestNG-PoolService-2] INFO  com.framework.base.BaseApiClient - POST /posts/ using [JWT] auth
+2026-08-11 13:02:32 [TestNG-PoolService-5] INFO  com.framework.auth.JwtAuthStrategy - Applying JWT Bearer Authentication
+2026-08-11 13:02:32 [TestNG-PoolService-4] INFO  com.framework.auth.JwtAuthStrategy - Applying JWT Bearer Authentication
+2026-08-11 13:02:32 [TestNG-PoolService-6] INFO  com.framework.auth.BasicAuthStrategy - Applying Basic Authentication for user [Ram]
+2026-08-11 13:02:32 [TestNG-PoolService-9] INFO  com.framework.auth.JwtAuthStrategy - Applying JWT Bearer Authentication
+2026-08-11 13:02:32 [TestNG-PoolService-2] INFO  com.framework.auth.JwtAuthStrategy - Applying JWT Bearer Authentication
+2026-08-11 13:02:32 [TestNG-PoolService-3] INFO  com.framework.auth.JwtAuthStrategy - Applying JWT Bearer Authentication
+2026-08-11 13:03:45 [main] INFO  com.framework.base.Hooks - =========== STARTING SCENARIO: Successfully retrieve a single user using API Key authentication ===========
+2026-08-11 13:03:45 [main] INFO  com.framework.base.Hooks - =========== FINISHED SCENARIO: Successfully retrieve a single user using API Key authentication | STATUS: FAILED ===========

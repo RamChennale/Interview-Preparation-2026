@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="7.386" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="SauceDemo - Login and End to End Checkout" name="Add Sauce Labs Backpack to cart and complete checkout successfully" time="7.04">
+<system-out><![CDATA[
+Given user launches the SauceDemo application...............................passed
+When user logs in with username "standard_user" and password "secret_sauce".passed
+Then user should be navigated to the products page..........................passed
+When user adds "Sauce Labs Backpack" to the cart............................passed
+And user clicks on the cart icon............................................passed
+Then the cart should contain "Sauce Labs Backpack"..........................passed
+When user clicks on checkout button.........................................passed
+And user enters checkout information "Ram" "Chennale" "123456"..............passed
+And user clicks continue button.............................................passed
+And user clicks finish button...............................................passed
+Then user should see the message "Thank you for your order!"................passed
+]]></system-out>
+</testcase>
+</testsuite>

@@ -1,0 +1,93 @@
+pipeline {
+    agent any
+
+    tools {
+        maven 'Maven-3.9'   // Name configured in Jenkins > Manage Jenkins > Tools
+        jdk 'JDK-17'        // Name configured in Jenkins > Manage Jenkins > Tools
+    }
+
+    parameters {
+        choice(name: 'TEST_TAGS', choices: ['@Regression', '@Smoke', '@Create', '@Update', '@GetAll', '@GetSingle', '@Delete'],
+               description: 'Cucumber tag expression to filter which scenarios run')
+        choice(name: 'ENVIRONMENT', choices: ['QA', 'STAGE', 'PROD'], description: 'Target test environment')
+    }
+
+    triggers {
+        // Nightly regression run at 2 AM, in addition to manual/webhook triggers
+        cron('H 2 * * *')
+    }
+
+    environment {
+        REPORT_DIR = 'target/cucumber-reports'
+    }
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                echo "Checking out source code..."
+                checkout scm
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo "Compiling framework..."
+                sh 'mvn -B clean compile test-compile'
+            }
+        }
+
+        stage('Run Regression Tests') {
+            steps {
+                echo "Executing Cucumber/TestNG suite with tag: ${params.TEST_TAGS}"
+                sh """
+                    mvn -B test \
+                        -Dcucumber.filter.tags="${params.TEST_TAGS}" \
+                        -Denv=${params.ENVIRONMENT}
+                """
+            }
+        }
+
+        stage('Publish Reports') {
+            steps {
+                // Requires the "Cucumber Reports" Jenkins plugin
+                cucumber buildStatus: 'UNSTABLE',
+                         fileIncludePattern: '**/cucumber.json',
+                         jsonReportDirectory: "${env.REPORT_DIR}"
+
+                // Requires the "HTML Publisher" plugin
+                publishHTML(target: [
+                        allowMissing: true,
+                        alwaysLinkToLastBuild: true,
+                        keepAll: true,
+                        reportDir: "${env.REPORT_DIR}",
+                        reportFiles: 'cucumber-html-report.html',
+                        reportName: 'Cucumber HTML Report'
+                ])
+
+                // Requires the "TestNG Results" plugin
+                step([$class: 'Publisher', reportFilenamePattern: '**/testng-results.xml'])
+
+                junit allowEmptyResults: true, testResults: '**/cucumber.xml'
+            }
+        }
+    }
+
+    post {
+        always {
+            archiveArtifacts artifacts: 'target/cucumber-reports/**, target/logs/**', allowEmptyArchive: true
+        }
+        failure {
+            echo "Regression suite FAILED - sending notification."
+            // mail to: 'qa-team@example.com',
+            //      subject: "FAILED: ${currentBuild.fullDisplayName}",
+            //      body: "Regression suite failed. See ${env.BUILD_URL}"
+        }
+        unstable {
+            echo "Regression suite completed with test failures (build marked UNSTABLE)."
+        }
+        success {
+            echo "Regression suite PASSED."
+        }
+    }
+}

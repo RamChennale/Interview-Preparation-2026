@@ -1,0 +1,309 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: TC_23RightClick.spec.js >> right click
+- Location: tests\TC_23RightClick.spec.js:5:1
+
+# Error details
+
+```
+Error: locator.click: Error: strict mode violation: getByText('right click me') resolved to 2 elements:
+    1) <span class="context-menu-one btn btn-neutral">right click me</span> aka getByText('right click me', { exact: true })
+    2) <code data-highlighted="yes" class="html hljs language-xml">…</code> aka getByText('<span class="context-menu-one btn btn-neutral">right click me</span>')
+
+Call log:
+  - waiting for getByText('right click me')
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - link [ref=e3] [cursor=pointer]:
+      - /url: /jQuery-contextMenu/
+      - strong [ref=e4]: jQuery contextMenu
+    - list [ref=e5]:
+      - listitem [ref=e6]:
+        - link "Introduction" [ref=e7] [cursor=pointer]:
+          - /url: /jQuery-contextMenu/
+        - list [ref=e8]:
+          - listitem [ref=e9]:
+            - link "Author" [ref=e10] [cursor=pointer]:
+              - /url: https://www.swis.nl/over-ons/bjorn-brala
+          - listitem [ref=e11]:
+            - link "Demo" [ref=e12] [cursor=pointer]:
+              - /url: /jQuery-contextMenu/demo.html
+      - listitem [ref=e13]:
+        - link "Documentation" [ref=e14] [cursor=pointer]:
+          - /url: /jQuery-contextMenu/docs.html
+        - list [ref=e15]:
+          - listitem [ref=e16]:
+            - link "Options" [ref=e17] [cursor=pointer]:
+              - /url: /jQuery-contextMenu/docs.html
+          - listitem [ref=e18]:
+            - link "Defining menu items" [ref=e19] [cursor=pointer]:
+              - /url: /jQuery-contextMenu/docs/items.html
+          - listitem [ref=e20]:
+            - link "Plugin commands" [ref=e21] [cursor=pointer]:
+              - /url: /jQuery-contextMenu/docs/plugin-commands.html
+          - listitem [ref=e22]:
+            - link "Customize icons" [ref=e23] [cursor=pointer]:
+              - /url: /jQuery-contextMenu/docs/customize.html
+          - listitem [ref=e24]:
+            - link "FontAwesome icons" [ref=e25] [cursor=pointer]:
+              - /url: /jQuery-contextMenu/demo/fontawesome-icons.html
+          - listitem [ref=e26]:
+            - link "Font Awesome support" [ref=e27] [cursor=pointer]:
+              - /url: /jQuery-contextMenu/docs/font-awesome.html
+          - listitem [ref=e28]:
+            - link "Runtime options" [ref=e29] [cursor=pointer]:
+              - /url: /jQuery-contextMenu/docs/runtime-options.html
+          - listitem [ref=e30]:
+            - link "Custom command types" [ref=e31] [cursor=pointer]:
+              - /url: /jQuery-contextMenu/docs/custom-command-types.html
+          - listitem [ref=e32]:
+            - link "Events" [ref=e33] [cursor=pointer]:
+              - /url: /jQuery-contextMenu/docs/events.html
+          - listitem [ref=e34]:
+            - link "HTML5 polyfill" [ref=e35] [cursor=pointer]:
+              - /url: /jQuery-contextMenu/docs/html5-polyfill.html
+      - listitem [ref=e36]:
+        - link "Demo gallery" [ref=e37] [cursor=pointer]:
+          - /url: /jQuery-contextMenu/demo.html
+        - list [ref=e38]:
+          - listitem [ref=e39]:
+            - link "Simple Context Menu" [ref=e40] [cursor=pointer]:
+              - /url: /jQuery-contextMenu/demo.html
+          - listitem [ref=e41]:
+            - link "FontAwesome icons" [ref=e42] [cursor=pointer]:
+              - /url: /jQuery-contextMenu/demo/fontawesome-icons.html
+          - listitem [ref=e43]:
+            - link "Accesskeys" [ref=e44] [cursor=pointer]:
+              - /url: /jQuery-contextMenu/demo/accesskeys.html
+          - listitem [ref=e45]:
+            - link "Animation Options" [ref=e46] [cursor=pointer]:
+              - /url: /jQuery-contextMenu/demo/animation.html
+          - listitem [ref=e47]:
+            - link "Create Context Menu (asynchronous)" [ref=e48] [cursor=pointer]:
+              - /url: /jQuery-contextMenu/demo/async-create.html
+          - listitem [ref=e49]:
+            - link "Create Context Menu (promise)" [ref=e50] [cursor=pointer]:
+              - /url: /jQuery-contextMenu/demo/async-promise.html
+          - listitem [ref=e51]:
+            - link "Command's action (callbacks)" [ref=e52] [cursor=pointer]:
+              - /url: /jQuery-contextMenu/demo/callback.html
+          - listitem [ref=e53]:
+            - link "Custom Command Types" [ref=e54] [cursor=pointer]:
+              - /url: /jQuery-contextMenu/demo/custom-command.html
+          - listitem [ref=e55]:
+            - link "Disabled Command" [ref=e56] [cursor=pointer]:
+              - /url: /jQuery-contextMenu/demo/disabled.html
+          - listitem [ref=e57]:
+            - link "Disabled Callback Command" [ref=e58] [cursor=pointer]:
+              - /url: /jQuery-contextMenu/demo/disabled-callback.html
+          - listitem [ref=e59]:
+            - link "Changing Command's disabled status" [ref=e60] [cursor=pointer]:
+              - /url: /jQuery-contextMenu/demo/disabled-changing.html
+          - listitem [ref=e61]:
+            - link "Disabled Menu" [ref=e62] [cursor=pointer]:
+              - /url: /jQuery-contextMenu/demo/disabled-menu.html
+          - listitem [ref=e63]:
+            - link "Adding new Context Menu Triggers" [ref=e64] [cursor=pointer]:
+              - /url: /jQuery-contextMenu/demo/dynamic.html
+          - listitem [ref=e65]:
+            - link "Create Context Menu on demand" [ref=e66] [cursor=pointer]:
+              - /url: /jQuery-contextMenu/demo/dynamic-create.html
+          - listitem [ref=e67]:
+            - link "Importing HTML5 menu" [ref=e68] [cursor=pointer]:
+              - /url: /jQuery-contextMenu/demo/html5-import.html
+          - listitem [ref=e69]:
+            - link "HTML5 polyfill" [ref=e70] [cursor=pointer]:
+              - /url: /jQuery-contextMenu/demo/html5-polyfill.html
+          - listitem [ref=e71]:
+            - link "HTML5 polyfill (Firefox)" [ref=e72] [cursor=pointer]:
+              - /url: /jQuery-contextMenu/demo/html5-polyfill-firefox8.html
+          - listitem [ref=e73]:
+            - link "Input Commands" [ref=e74] [cursor=pointer]:
+              - /url: /jQuery-contextMenu/demo/input.html
+          - listitem [ref=e75]:
+            - link "Input Commands (accessing the trigger)" [ref=e76] [cursor=pointer]:
+              - /url: /jQuery-contextMenu/demo/input-rename-trigger.html
+          - listitem [ref=e77]:
+            - link "Keeping the context menu open" [ref=e78] [cursor=pointer]:
+              - /url: /jQuery-contextMenu/demo/keeping-contextmenu-open.html
+          - listitem [ref=e79]:
+            - link "Menus with titles" [ref=e80] [cursor=pointer]:
+              - /url: /jQuery-contextMenu/demo/menu-title.html
+          - listitem [ref=e81]:
+            - link "Menu title with Font Awesome icons" [ref=e82] [cursor=pointer]:
+              - /url: /jQuery-contextMenu/demo/menu-title-fontawesome.html
+          - listitem [ref=e83]:
+            - link "Menu with promise" [ref=e84] [cursor=pointer]:
+              - /url: /jQuery-contextMenu/demo/menu-promise.html
+          - listitem [ref=e85]:
+            - link "Context Menu on DOM Element" [ref=e86] [cursor=pointer]:
+              - /url: /jQuery-contextMenu/demo/on-dom-element.html
+          - listitem [ref=e87]:
+            - link "Nested Triggers With Autohide" [ref=e88] [cursor=pointer]:
+              - /url: /jQuery-contextMenu/demo/nested-triggers-autohide.html
+          - listitem [ref=e89]:
+            - link "Submenus" [ref=e90] [cursor=pointer]:
+              - /url: /jQuery-contextMenu/demo/sub-menus.html
+          - listitem [ref=e91]:
+            - link "Submenus (promise)" [ref=e92] [cursor=pointer]:
+              - /url: /jQuery-contextMenu/demo/sub-menus-promise.html
+          - listitem [ref=e93]:
+            - link "Custom Activated Context Menu" [ref=e94] [cursor=pointer]:
+              - /url: /jQuery-contextMenu/demo/trigger-custom.html
+          - listitem [ref=e95]:
+            - link "Hover Activated Context Menu" [ref=e96] [cursor=pointer]:
+              - /url: /jQuery-contextMenu/demo/trigger-hover.html
+          - listitem [ref=e97]:
+            - link "Hover Activated Context Menu With Autohide" [ref=e98] [cursor=pointer]:
+              - /url: /jQuery-contextMenu/demo/trigger-hover-autohide.html
+          - listitem [ref=e99]:
+            - link "Left-Click Trigger" [ref=e100] [cursor=pointer]:
+              - /url: /jQuery-contextMenu/demo/trigger-left-click.html
+          - listitem [ref=e101]:
+            - link "Swipe Trigger" [ref=e102] [cursor=pointer]:
+              - /url: /jQuery-contextMenu/demo/trigger-swipe.html
+  - main [ref=e103]:
+    - 'heading "Demo: Simple Context Menu" [level=1] [ref=e104]'
+    - list [ref=e105]:
+      - listitem [ref=e106]:
+        - 'link "Example code: Simple Context Menu" [ref=e107] [cursor=pointer]':
+          - /url: "#example-code-simple-context-menu"
+      - listitem [ref=e108]:
+        - 'link "Example HTML: Simple Context Menu" [ref=e109] [cursor=pointer]':
+          - /url: "#example-html-simple-context-menu"
+      - listitem [ref=e110]:
+        - link "jQuery Context Menu Demo Gallery" [ref=e111] [cursor=pointer]:
+          - /url: "#jquery-context-menu-demo-gallery"
+    - paragraph [ref=e112]:
+      - generic [ref=e113]: right click me
+    - 'heading "Example code: Simple Context Menu" [level=2] [ref=e114]'
+    - code [ref=e116]: "$(function() { $.contextMenu({ selector: '.context-menu-one', callback: function(key, options) { var m = \"clicked: \" + key; window.console && console.log(m) || alert(m); }, items: { \"edit\": {name: \"Edit\", icon: \"edit\"}, \"cut\": {name: \"Cut\", icon: \"cut\"}, copy: {name: \"Copy\", icon: \"copy\"}, \"paste\": {name: \"Paste\", icon: \"paste\"}, \"delete\": {name: \"Delete\", icon: \"delete\"}, \"sep1\": \"---------\", \"quit\": {name: \"Quit\", icon: function(){ return 'context-menu-icon context-menu-icon-quit'; }} } }); $('.context-menu-one').on('click', function(e){ console.log('clicked', this); }) });"
+    - 'heading "Example HTML: Simple Context Menu" [level=2] [ref=e117]'
+    - code [ref=e119]:
+      - generic [ref=e120]: <span class="context-menu-one btn btn-neutral">
+      - text: right click me
+      - generic [ref=e121]: </span>
+    - heading "jQuery Context Menu Demo Gallery" [level=2] [ref=e122]
+    - list [ref=e123]:
+      - listitem [ref=e124]:
+        - link "Simple Context Menu" [ref=e125] [cursor=pointer]:
+          - /url: demo.html
+      - listitem [ref=e126]:
+        - link "Context Menu on DOM Element" [ref=e127] [cursor=pointer]:
+          - /url: demo/on-dom-element.html
+      - listitem [ref=e128]:
+        - link "Adding new Context Menu Triggers" [ref=e129] [cursor=pointer]:
+          - /url: demo/dynamic.html
+      - listitem [ref=e130]:
+        - link "Create Context Menu on demand" [ref=e131] [cursor=pointer]:
+          - /url: demo/dynamic-create.html
+      - listitem [ref=e132]:
+        - link "Create Context Menu (asynchronous)" [ref=e133] [cursor=pointer]:
+          - /url: demo/async-create.html
+      - listitem [ref=e134]:
+        - link "Keeping the context menu open" [ref=e135] [cursor=pointer]:
+          - /url: demo/keeping-contextmenu-open.html
+      - listitem [ref=e136]:
+        - link "Command's action (callbacks)" [ref=e137] [cursor=pointer]:
+          - /url: demo/callback.html
+      - listitem [ref=e138]:
+        - link "Left-Click Trigger" [ref=e139] [cursor=pointer]:
+          - /url: demo/trigger-left-click.html
+      - listitem [ref=e140]:
+        - link "Swipe Trigger" [ref=e141] [cursor=pointer]:
+          - /url: demo/trigger-swipe.html
+      - listitem [ref=e142]:
+        - link "Hover Activated Context Menu" [ref=e143] [cursor=pointer]:
+          - /url: demo/trigger-hover.html
+      - listitem [ref=e144]:
+        - link "Hover Activated Context Menu With Autohide" [ref=e145] [cursor=pointer]:
+          - /url: demo/trigger-hover-autohide.html
+      - listitem [ref=e146]:
+        - link "Nested Triggers With Autohide" [ref=e147] [cursor=pointer]:
+          - /url: demo/nested-triggers-autohide.html
+      - listitem [ref=e148]:
+        - link "Custom Activated Context Menu" [ref=e149] [cursor=pointer]:
+          - /url: demo/trigger-custom.html
+      - listitem [ref=e150]:
+        - link "Disabled Menu" [ref=e151] [cursor=pointer]:
+          - /url: demo/disabled-menu.html
+      - listitem [ref=e152]:
+        - link "Disabled Command" [ref=e153] [cursor=pointer]:
+          - /url: demo/disabled.html
+      - listitem [ref=e154]:
+        - link "Disabled Callback Command" [ref=e155] [cursor=pointer]:
+          - /url: demo/disabled-callback.html
+      - listitem [ref=e156]:
+        - link "Changing Command's disabled status" [ref=e157] [cursor=pointer]:
+          - /url: demo/disabled-changing.html
+      - listitem [ref=e158]:
+        - link "Accesskeys" [ref=e159] [cursor=pointer]:
+          - /url: demo/accesskeys.html
+      - listitem [ref=e160]:
+        - link "Animation Options" [ref=e161] [cursor=pointer]:
+          - /url: demo/animation.html
+      - listitem [ref=e162]:
+        - link "Submenus" [ref=e163] [cursor=pointer]:
+          - /url: demo/sub-menus.html
+      - listitem [ref=e164]:
+        - link "Input Commands" [ref=e165] [cursor=pointer]:
+          - /url: demo/input.html
+      - listitem [ref=e166]:
+        - link "Custom Command Types" [ref=e167] [cursor=pointer]:
+          - /url: demo/custom-command.html
+      - listitem [ref=e168]:
+        - link "Menus with titles" [ref=e169] [cursor=pointer]:
+          - /url: demo/menu-title.html
+      - listitem [ref=e170]:
+        - link "Menu title with Font Awesome icons" [ref=e171] [cursor=pointer]:
+          - /url: demo/menu-title-fontawesome.html
+      - listitem [ref=e172]:
+        - link "Importing HTML5" [ref=e173] [cursor=pointer]:
+          - /url: demo/html5-import.html
+        - list:
+          - link:
+            - /url: demo/html5-import.html
+      - listitem [ref=e174]:
+        - link "HTML5 Polyfill" [ref=e175] [cursor=pointer]:
+          - /url: demo/html5-polyfill.html
+      - listitem [ref=e176]:
+        - link "HTML5 Polyfill (Firefox)" [ref=e177] [cursor=pointer]:
+          - /url: demo/html5-polyfill-firefox8.html
+    - paragraph [ref=e179]:
+      - text: Find jQuery contextMenu on
+      - link "GitHub" [ref=e180] [cursor=pointer]:
+        - /url: https://github.com/swisnl/jQuery-contextMenu
+      - text: .
+  - text:      
+```
+
+# Test source
+
+```ts
+  1  | const{test, expect} = require('@playwright/test');
+  2  | 
+  3  | // test template-  test('name', async()=>{});
+  4  | 
+  5  | test('right click', async({page})=>{
+  6  | 
+  7  |     page.goto('http://swisnl.github.io/jQuery-contextMenu/demo.html');
+  8  | 
+  9  |     const rightClick =  page.getByText('right click me')
+> 10 |     await rightClick.click({button:'right'});
+     |                      ^ Error: locator.click: Error: strict mode violation: getByText('right click me') resolved to 2 elements:
+  11 |     await page.waitForTimeout(3000);
+  12 | });
+  13 | 
+```

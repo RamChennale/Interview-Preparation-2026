@@ -1,0 +1,26 @@
+
+all sanity:
+npx playwright test tests/Tags.spec.js --project chromium --grep '@sanity'
+
+all regression:
+npx playwright test tests/Tags.spec.js --project chromium --grep '@reg' 
+
+both sanity & regression:
+npx playwright test tests/Tags.spec.js --project chromium --grep '@reg@sanity' 
+
+
+only sanity but not regression:
+npx playwright test tests/Tags.spec.js --project chromium --grep @sanity --grep-invert @reg
+
+
+only regression but not sanity:
+npx playwright test tests/Tags.spec.js --project chromium --grep @reg --grep-invert @sanity
+
+
+
+
+ 
+
+
+
+

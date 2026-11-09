@@ -1,0 +1,64 @@
+pipeline {
+    agent any
+
+    tools {
+        maven 'Maven3'   // Name must match a Maven installation configured in Jenkins > Global Tool Configuration
+        jdk 'JDK11'      // Name must match a JDK installation configured in Jenkins > Global Tool Configuration
+    }
+
+    parameters {
+        choice(name: 'BROWSER', choices: ['chromium', 'firefox', 'webkit'], description: 'Browser to run the regression suite on')
+    }
+
+    options {
+        timestamps()
+        buildDiscarder(logRotator(numToKeepStr: '20'))
+    }
+
+    stages {
+
+        stage('Checkout Code') {
+            steps {
+                // Replace with your actual repository URL
+                git branch: 'main', url: 'https://github.com/your-org/swaglabs-playwright-cucumber-java.git'
+            }
+        }
+
+        stage('Build & Resolve Dependencies') {
+            steps {
+                sh 'mvn -B clean install -DskipTests'
+            }
+        }
+
+        stage('Install Playwright Browsers') {
+            steps {
+                // Downloads the browser binaries Playwright needs on the Jenkins agent
+                sh 'mvn -B exec:java -Dexec.mainClass=com.microsoft.playwright.CLI -Dexec.args="install --with-deps"'
+            }
+        }
+
+        stage('Run Regression Tests') {
+            steps {
+                sh "mvn -B test -Dbrowser=${params.BROWSER} -Dheadless=true"
+            }
+        }
+
+        stage('Publish Cucumber Report') {
+            steps {
+                cucumber buildStatus: 'UNSTABLE',
+                         fileIncludePattern: '**/CucumberTestReport.json',
+                         jsonReportDirectory: 'target/cucumber-reports'
+            }
+        }
+    }
+
+    post {
+        always {
+            junit allowEmptyResults: true, testResults: 'target/cucumber-reports/*.xml'
+            archiveArtifacts artifacts: 'target/cucumber-reports/**', allowEmptyArchive: true
+        }
+        failure {
+            echo 'Regression run failed - check the Cucumber HTML report and screenshots attached to failed scenarios.'
+        }
+    }
+}

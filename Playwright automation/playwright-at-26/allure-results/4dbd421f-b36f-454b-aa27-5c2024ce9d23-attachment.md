@@ -1,0 +1,70 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: TC_30Screenshot.spec.js >> Element screenshot
+- Location: tests\TC_30Screenshot.spec.js:13:5
+
+# Error details
+
+```
+Test timeout of 30000ms exceeded.
+```
+
+```
+Error: locator.screenshot: Test timeout of 30000ms exceeded.
+Call log:
+  - waiting for locator('//*[@id="content"]/div[2]')
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [active] [ref=f30e1]:
+  - main [ref=f30e2]:
+    - generic [ref=f30e3]:
+      - heading "demo.opencart.com" [level=1] [ref=f30e5]
+      - heading "Performing security verification" [level=2] [ref=f30e6]
+      - paragraph [ref=f30e7]: This website uses a security service to protect against malicious bots. This page is displayed while the website verifies you are not a bot.
+  - contentinfo [ref=f30e14]:
+    - generic [ref=f30e16]:
+      - generic [ref=f30e18]:
+        - text: "Ray ID:"
+        - code [ref=f30e19]: a44d5c6579683460
+      - generic [ref=f30e20]:
+        - generic [ref=f30e21]:
+          - text: Performance and Security by
+          - link "Cloudflare, opens in a new tab" [ref=f30e22] [cursor=pointer]:
+            - /url: https://www.cloudflare.com?utm_source=challenge&utm_campaign=j
+            - text: Cloudflare
+        - link "Privacy, opens in a new tab" [ref=f30e24] [cursor=pointer]:
+          - /url: https://www.cloudflare.com/privacypolicy/
+          - text: Privacy
+```
+
+# Test source
+
+```ts
+  1  | import { test, expect } from '@playwright/test';
+  2  | 
+  3  | test('page screenshot', async ({ page }) => {
+  4  |   await page.goto('https://demo.opencart.com/');
+  5  |   await page.screenshot({ path: 'tests/screenshots/'+Date.now()+'HomePage.png' });
+  6  | });
+  7  | 
+  8  | test('Full page screenshot', async ({ page }) => {
+  9  |   await page.goto('https://demo.opencart.com/');
+  10 |   await page.screenshot({ path: 'tests/screenshots/'+Date.now()+'FullHomePage.png',fullPage: true});
+  11 | });
+  12 | 
+  13 | test('Element screenshot', async ({ page }) => {
+  14 |   await page.goto('https://demo.opencart.com/');
+> 15 |   await page.locator('//*[@id="content"]/div[2]').screenshot({ path: 'tests/screenshots/'+Date.now()+'FeaturedProducts.png'});
+     |                                                   ^ Error: locator.screenshot: Test timeout of 30000ms exceeded.
+  16 | });
+```

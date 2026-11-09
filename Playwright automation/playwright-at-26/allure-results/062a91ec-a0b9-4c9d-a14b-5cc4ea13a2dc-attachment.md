@@ -1,0 +1,804 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: TC_27UploadFiles.spec.js >> Single File
+- Location: tests\TC_27UploadFiles.spec.js:3:6
+
+# Error details
+
+```
+Test timeout of 30000ms exceeded.
+```
+
+```
+Error: page.waitForSelector: Test timeout of 30000ms exceeded.
+Call log:
+  - waiting for locator('.mqfihd-upload') to be visible
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - img "foundit Logo" [ref=e6] [cursor=pointer]
+      - generic [ref=e8]:
+        - link "Jobs" [ref=e11] [cursor=pointer]:
+          - /url: /search/jobs
+        - link "Career Solutions" [ref=e14] [cursor=pointer]:
+          - /url: /career-services/boost
+        - link "Prep" [ref=e17] [cursor=pointer]:
+          - /url: /career-services/prep
+        - link "Learn" [ref=e20] [cursor=pointer]:
+          - /url: /career-services/learn
+        - link "Career Advice" [ref=e23] [cursor=pointer]:
+          - /url: /career-advice/
+    - generic [ref=e25]:
+      - button "Login" [ref=e26] [cursor=pointer]
+      - button "Register" [ref=e29] [cursor=pointer]
+      - button "Employers Login" [ref=e33] [cursor=pointer]
+  - generic [ref=e34]:
+    - generic [ref=e37]:
+      - generic [ref=e38]:
+        - heading "8,00,000+ Jobs In India" [level=1] [ref=e39]
+        - generic [ref=e40]: Get Hired by Top Companies
+      - generic [ref=e44]:
+        - generic [ref=e46]:
+          - textbox "Search by Skills, Company or Job Title" [ref=e53]
+          - generic: Please enter a job title/role/skill to search
+        - generic [ref=e56]:
+          - textbox "Location" [ref=e63]
+          - generic: Please enter a job title/role/skill to search
+        - generic [ref=e66]:
+          - textbox "Experience" [ref=e73]
+          - generic: Please enter a job title/role/skill to search
+        - button "Search" [ref=e78] [cursor=pointer]
+    - generic [ref=e81]:
+      - generic [ref=e83]:
+        - heading "Featured Companies" [level=2] [ref=e85]
+        - generic [ref=e86]:
+          - button "Previous" [ref=e87] [cursor=pointer]
+          - button "Next" [ref=e90] [cursor=pointer]
+          - generic [ref=e95]:
+            - link [ref=e97] [cursor=pointer]:
+              - /url: https://www.foundit.in/company/cognizant/index.html
+              - img "Cognizant Technology Solutions India Pvt Ltd jobs" [ref=e98]
+            - link [ref=e100] [cursor=pointer]:
+              - /url: /company/infosysltd/
+              - img "Infosys Limited jobs" [ref=e101]
+            - link [ref=e103] [cursor=pointer]:
+              - /url: https://www.foundit.in/company/ltitin/index.html
+              - img "LTIMindtree Limited jobs" [ref=e104]
+            - link [ref=e106] [cursor=pointer]:
+              - /url: https://www.foundit.in/company/quess/
+              - img "Quess Corp Limited jobs" [ref=e107]
+            - link [ref=e109] [cursor=pointer]:
+              - /url: /search/xcihealtechpvtinx-jobs?query=xcihealtechpvtinx&queryDerived=true
+              - img "Citiustech Healthcare Technology Private Limited jobs" [ref=e110]
+            - link [ref=e112] [cursor=pointer]:
+              - /url: https://www.foundit.in/company/cognizant/index.html
+              - img "Cognizant Technology Solutions India Pvt Ltd jobs" [ref=e113]
+            - link [ref=e115] [cursor=pointer]:
+              - /url: /company/infosysltd/
+              - img "Infosys Limited jobs" [ref=e116]
+            - link [ref=e118] [cursor=pointer]:
+              - /url: https://www.foundit.in/company/ltitin/index.html
+              - img "LTIMindtree Limited jobs" [ref=e119]
+            - link [ref=e121] [cursor=pointer]:
+              - /url: https://www.foundit.in/company/quess/
+              - img "Quess Corp Limited jobs" [ref=e122]
+            - link [ref=e124] [cursor=pointer]:
+              - /url: /search/xcihealtechpvtinx-jobs?query=xcihealtechpvtinx&queryDerived=true
+              - img "Citiustech Healthcare Technology Private Limited jobs" [ref=e125]
+            - link [ref=e127] [cursor=pointer]:
+              - /url: https://www.foundit.in/company/cognizant/index.html
+              - img "Cognizant Technology Solutions India Pvt Ltd jobs" [ref=e128]
+            - link [ref=e130] [cursor=pointer]:
+              - /url: /company/infosysltd/
+              - img "Infosys Limited jobs" [ref=e131]
+            - link [ref=e133] [cursor=pointer]:
+              - /url: https://www.foundit.in/company/ltitin/index.html
+              - img "LTIMindtree Limited jobs" [ref=e134]
+            - link [ref=e136] [cursor=pointer]:
+              - /url: https://www.foundit.in/company/quess/
+              - img "Quess Corp Limited jobs" [ref=e137]
+            - link [ref=e139] [cursor=pointer]:
+              - /url: /search/xcihealtechpvtinx-jobs?query=xcihealtechpvtinx&queryDerived=true
+              - img "Citiustech Healthcare Technology Private Limited jobs" [ref=e140]
+      - generic [ref=e141]:
+        - generic [ref=e142]: Popular Categories
+        - generic [ref=e144]:
+          - link "Banking" [ref=e145] [cursor=pointer]:
+            - /url: https://www.foundit.in/search/banking-jobs
+          - link "Work From Home" [ref=e150] [cursor=pointer]:
+            - /url: https://www.foundit.in/search/work-from-home-jobs
+          - link "HR" [ref=e155] [cursor=pointer]:
+            - /url: https://www.foundit.in/search/hr-jobs
+          - link "Sales" [ref=e160] [cursor=pointer]:
+            - /url: https://www.foundit.in/search/sales-jobs
+          - link "Accounting" [ref=e165] [cursor=pointer]:
+            - /url: https://www.foundit.in/search/accounting-jobs
+          - link "Customer Support" [ref=e170] [cursor=pointer]:
+            - /url: https://www.foundit.in/search/customer-support-jobs
+          - link "Event Management" [ref=e175] [cursor=pointer]:
+            - /url: https://www.foundit.in/search/event-management-jobs
+          - link "IT" [ref=e180] [cursor=pointer]:
+            - /url: https://www.foundit.in/search/it-jobs
+          - link "SQL" [ref=e185] [cursor=pointer]:
+            - /url: https://www.foundit.in/search/sql-jobs
+          - link "Oracle" [ref=e190] [cursor=pointer]:
+            - /url: https://www.foundit.in/search/oracle-jobs
+          - link "Graphic Design" [ref=e195] [cursor=pointer]:
+            - /url: https://www.foundit.in/search/graphic-design-jobs
+          - link "Digital Marketing" [ref=e200] [cursor=pointer]:
+            - /url: https://www.foundit.in/search/digital-marketing-jobs
+      - generic [ref=e205]:
+        - heading "Trending skills" [level=2] [ref=e206]
+        - generic [ref=e208]:
+          - button "←" [ref=e209] [cursor=pointer]
+          - generic [ref=e213]:
+            - link [ref=e217] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/accounting-jobs
+              - button [ref=e218]:
+                - paragraph [ref=e219]: Accounting Jobs
+            - link [ref=e223] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/analytics-jobs
+              - button [ref=e224]:
+                - paragraph [ref=e225]: Analytics Jobs
+            - link [ref=e229] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/animation-jobs
+              - button [ref=e230]:
+                - paragraph [ref=e231]: Animation Jobs
+            - link [ref=e235] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/architecture-jobs
+              - button [ref=e236]:
+                - paragraph [ref=e237]: Architecture Jobs
+            - link [ref=e241] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/banking-jobs
+              - button [ref=e242]:
+                - paragraph [ref=e243]: Banking Jobs
+            - link [ref=e247] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/bpo-jobs
+              - button [ref=e248]:
+                - paragraph [ref=e249]: BPO Jobs
+            - link [ref=e253] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/data-science-jobs
+              - button [ref=e254]:
+                - paragraph [ref=e255]: Data Science Jobs
+            - link [ref=e259] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/java-jobs
+              - button [ref=e260]:
+                - paragraph [ref=e261]: Java Jobs
+            - link [ref=e265] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/marketing-jobs
+              - button [ref=e266]:
+                - paragraph [ref=e267]: Marketing Jobs
+            - link [ref=e271] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/mechanical-engineering-jobs
+              - button [ref=e272]:
+                - paragraph [ref=e273]: Mechanical Engineering Jobs
+            - link [ref=e277] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/networking-jobs
+              - button [ref=e278]:
+                - paragraph [ref=e279]: Networking Jobs
+            - link [ref=e283] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/online-marketing-jobs
+              - button [ref=e284]:
+                - paragraph [ref=e285]: Online Marketing Jobs
+            - link [ref=e289] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/seo-jobs
+              - button [ref=e290]:
+                - paragraph [ref=e291]: SEO Jobs
+            - link [ref=e295] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/teaching-jobs
+              - button [ref=e296]:
+                - paragraph [ref=e297]: Teaching Jobs
+            - link [ref=e301] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/ux-ui-design-jobs
+              - button [ref=e302]:
+                - paragraph [ref=e303]: UX/UI Jobs
+            - link [ref=e307] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/accounting-jobs
+              - button [ref=e308]:
+                - paragraph [ref=e309]: Accounting Jobs
+            - link [ref=e313] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/analytics-jobs
+              - button [ref=e314]:
+                - paragraph [ref=e315]: Analytics Jobs
+            - link [ref=e319] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/animation-jobs
+              - button [ref=e320]:
+                - paragraph [ref=e321]: Animation Jobs
+            - link [ref=e325] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/architecture-jobs
+              - button [ref=e326]:
+                - paragraph [ref=e327]: Architecture Jobs
+            - link [ref=e331] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/banking-jobs
+              - button [ref=e332]:
+                - paragraph [ref=e333]: Banking Jobs
+            - link [ref=e337] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/bpo-jobs
+              - button [ref=e338]:
+                - paragraph [ref=e339]: BPO Jobs
+            - link [ref=e343] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/data-science-jobs
+              - button [ref=e344]:
+                - paragraph [ref=e345]: Data Science Jobs
+            - link [ref=e349] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/java-jobs
+              - button [ref=e350]:
+                - paragraph [ref=e351]: Java Jobs
+            - link [ref=e355] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/marketing-jobs
+              - button [ref=e356]:
+                - paragraph [ref=e357]: Marketing Jobs
+            - link [ref=e361] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/mechanical-engineering-jobs
+              - button [ref=e362]:
+                - paragraph [ref=e363]: Mechanical Engineering Jobs
+            - link [ref=e367] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/networking-jobs
+              - button [ref=e368]:
+                - paragraph [ref=e369]: Networking Jobs
+            - link [ref=e373] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/online-marketing-jobs
+              - button [ref=e374]:
+                - paragraph [ref=e375]: Online Marketing Jobs
+            - link [ref=e379] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/seo-jobs
+              - button [ref=e380]:
+                - paragraph [ref=e381]: SEO Jobs
+            - link [ref=e385] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/teaching-jobs
+              - button [ref=e386]:
+                - paragraph [ref=e387]: Teaching Jobs
+            - link [ref=e391] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/ux-ui-design-jobs
+              - button [ref=e392]:
+                - paragraph [ref=e393]: UX/UI Jobs
+            - link [ref=e397] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/accounting-jobs
+              - button [ref=e398]:
+                - paragraph [ref=e399]: Accounting Jobs
+            - link [ref=e403] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/analytics-jobs
+              - button [ref=e404]:
+                - paragraph [ref=e405]: Analytics Jobs
+            - link [ref=e409] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/animation-jobs
+              - button [ref=e410]:
+                - paragraph [ref=e411]: Animation Jobs
+            - link [ref=e415] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/architecture-jobs
+              - button [ref=e416]:
+                - paragraph [ref=e417]: Architecture Jobs
+            - link [ref=e421] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/banking-jobs
+              - button [ref=e422]:
+                - paragraph [ref=e423]: Banking Jobs
+            - link [ref=e427] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/bpo-jobs
+              - button [ref=e428]:
+                - paragraph [ref=e429]: BPO Jobs
+            - link [ref=e433] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/data-science-jobs
+              - button [ref=e434]:
+                - paragraph [ref=e435]: Data Science Jobs
+            - link [ref=e439] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/java-jobs
+              - button [ref=e440]:
+                - paragraph [ref=e441]: Java Jobs
+            - link [ref=e445] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/marketing-jobs
+              - button [ref=e446]:
+                - paragraph [ref=e447]: Marketing Jobs
+            - link [ref=e451] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/mechanical-engineering-jobs
+              - button [ref=e452]:
+                - paragraph [ref=e453]: Mechanical Engineering Jobs
+            - link [ref=e457] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/networking-jobs
+              - button [ref=e458]:
+                - paragraph [ref=e459]: Networking Jobs
+            - link [ref=e463] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/online-marketing-jobs
+              - button [ref=e464]:
+                - paragraph [ref=e465]: Online Marketing Jobs
+            - link [ref=e469] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/seo-jobs
+              - button [ref=e470]:
+                - paragraph [ref=e471]: SEO Jobs
+            - link [ref=e475] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/teaching-jobs
+              - button [ref=e476]:
+                - paragraph [ref=e477]: Teaching Jobs
+            - link [ref=e481] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/ux-ui-design-jobs
+              - button [ref=e482]:
+                - paragraph [ref=e483]: UX/UI Jobs
+          - button "→" [ref=e484] [cursor=pointer]
+      - generic [ref=e487]:
+        - heading "Trending Jobs in India" [level=2] [ref=e488]
+        - generic [ref=e490]:
+          - button "←" [ref=e491] [cursor=pointer]
+          - generic [ref=e495]:
+            - link [ref=e499] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/business-analyst-jobs
+              - button [ref=e500]:
+                - paragraph [ref=e501]: Business Analyst Jobs
+            - link [ref=e505] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/digital-marketing-head-jobs
+              - button [ref=e506]:
+                - paragraph [ref=e507]: Digital Marketing Head Jobs
+            - link [ref=e511] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/engineering-manager-jobs
+              - button [ref=e512]:
+                - paragraph [ref=e513]: Engineering Manager Jobs
+            - link [ref=e517] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/hr-head-jobs
+              - button [ref=e518]:
+                - paragraph [ref=e519]: HR Head Jobs
+            - link [ref=e523] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/marketing-head-jobs
+              - button [ref=e524]:
+                - paragraph [ref=e525]: Marketing Head Jobs
+            - link [ref=e529] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/marketing-manager-jobs
+              - button [ref=e530]:
+                - paragraph [ref=e531]: Marketing Manager Jobs
+            - link [ref=e535] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/product-manager-jobs
+              - button [ref=e536]:
+                - paragraph [ref=e537]: Product Manager Jobs
+            - link [ref=e541] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/vp-business-development-jobs
+              - button [ref=e542]:
+                - paragraph [ref=e543]: VP Business Development Jobs
+            - link [ref=e547] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/vp-finance-jobs
+              - button [ref=e548]:
+                - paragraph [ref=e549]: VP Finance Jobs
+            - link [ref=e553] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/vp-hr-jobs
+              - button [ref=e554]:
+                - paragraph [ref=e555]: VP HR Jobs
+            - link [ref=e559] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/vp-marketing-jobs
+              - button [ref=e560]:
+                - paragraph [ref=e561]: VP Marketing Jobs
+            - link [ref=e565] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/vp-operations-jobs
+              - button [ref=e566]:
+                - paragraph [ref=e567]: VP Operations Jobs
+            - link [ref=e571] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/vp-sales-jobs
+              - button [ref=e572]:
+                - paragraph [ref=e573]: VP Sales Jobs
+            - link [ref=e577] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/brand-manager-jobs
+              - button [ref=e578]:
+                - paragraph [ref=e579]: Brand Manager Jobs
+            - link [ref=e583] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/business-analyst-jobs
+              - button [ref=e584]:
+                - paragraph [ref=e585]: Business Analyst Jobs
+            - link [ref=e589] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/digital-marketing-head-jobs
+              - button [ref=e590]:
+                - paragraph [ref=e591]: Digital Marketing Head Jobs
+            - link [ref=e595] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/engineering-manager-jobs
+              - button [ref=e596]:
+                - paragraph [ref=e597]: Engineering Manager Jobs
+            - link [ref=e601] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/hr-head-jobs
+              - button [ref=e602]:
+                - paragraph [ref=e603]: HR Head Jobs
+            - link [ref=e607] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/marketing-head-jobs
+              - button [ref=e608]:
+                - paragraph [ref=e609]: Marketing Head Jobs
+            - link [ref=e613] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/marketing-manager-jobs
+              - button [ref=e614]:
+                - paragraph [ref=e615]: Marketing Manager Jobs
+            - link [ref=e619] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/product-manager-jobs
+              - button [ref=e620]:
+                - paragraph [ref=e621]: Product Manager Jobs
+            - link [ref=e625] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/vp-business-development-jobs
+              - button [ref=e626]:
+                - paragraph [ref=e627]: VP Business Development Jobs
+            - link [ref=e631] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/vp-finance-jobs
+              - button [ref=e632]:
+                - paragraph [ref=e633]: VP Finance Jobs
+            - link [ref=e637] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/vp-hr-jobs
+              - button [ref=e638]:
+                - paragraph [ref=e639]: VP HR Jobs
+            - link [ref=e643] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/vp-marketing-jobs
+              - button [ref=e644]:
+                - paragraph [ref=e645]: VP Marketing Jobs
+            - link [ref=e649] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/vp-operations-jobs
+              - button [ref=e650]:
+                - paragraph [ref=e651]: VP Operations Jobs
+            - link [ref=e655] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/vp-sales-jobs
+              - button [ref=e656]:
+                - paragraph [ref=e657]: VP Sales Jobs
+            - link [ref=e661] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/brand-manager-jobs
+              - button [ref=e662]:
+                - paragraph [ref=e663]: Brand Manager Jobs
+            - link [ref=e667] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/business-analyst-jobs
+              - button [ref=e668]:
+                - paragraph [ref=e669]: Business Analyst Jobs
+            - link [ref=e673] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/digital-marketing-head-jobs
+              - button [ref=e674]:
+                - paragraph [ref=e675]: Digital Marketing Head Jobs
+            - link [ref=e679] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/engineering-manager-jobs
+              - button [ref=e680]:
+                - paragraph [ref=e681]: Engineering Manager Jobs
+            - link [ref=e685] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/hr-head-jobs
+              - button [ref=e686]:
+                - paragraph [ref=e687]: HR Head Jobs
+            - link [ref=e691] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/marketing-head-jobs
+              - button [ref=e692]:
+                - paragraph [ref=e693]: Marketing Head Jobs
+            - link [ref=e697] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/marketing-manager-jobs
+              - button [ref=e698]:
+                - paragraph [ref=e699]: Marketing Manager Jobs
+            - link [ref=e703] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/product-manager-jobs
+              - button [ref=e704]:
+                - paragraph [ref=e705]: Product Manager Jobs
+            - link [ref=e709] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/vp-business-development-jobs
+              - button [ref=e710]:
+                - paragraph [ref=e711]: VP Business Development Jobs
+            - link [ref=e715] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/vp-finance-jobs
+              - button [ref=e716]:
+                - paragraph [ref=e717]: VP Finance Jobs
+            - link [ref=e721] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/vp-hr-jobs
+              - button [ref=e722]:
+                - paragraph [ref=e723]: VP HR Jobs
+            - link [ref=e727] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/vp-marketing-jobs
+              - button [ref=e728]:
+                - paragraph [ref=e729]: VP Marketing Jobs
+            - link [ref=e733] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/vp-operations-jobs
+              - button [ref=e734]:
+                - paragraph [ref=e735]: VP Operations Jobs
+            - link [ref=e739] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/vp-sales-jobs
+              - button [ref=e740]:
+                - paragraph [ref=e741]: VP Sales Jobs
+            - link [ref=e745] [cursor=pointer]:
+              - /url: https://www.foundit.in/search/brand-manager-jobs
+              - button [ref=e746]:
+                - paragraph [ref=e747]: Brand Manager Jobs
+          - button "→" [ref=e748] [cursor=pointer]
+      - generic [ref=e751]:
+        - heading "Find job vacancies by" [level=2] [ref=e752]
+        - generic [ref=e754] [cursor=pointer]:
+          - heading "Skills" [level=3] [ref=e755]
+          - heading "Location" [level=3] [ref=e756]
+          - heading "Industry" [level=3] [ref=e757]
+          - heading "Functions" [level=3] [ref=e758]
+          - heading "Roles" [level=3] [ref=e759]
+          - heading "Company" [level=3] [ref=e760]
+        - list [ref=e763]:
+          - link [ref=e765] [cursor=pointer]:
+            - /url: /search/python-jobs
+            - button [ref=e766]:
+              - paragraph [ref=e767]: Python
+          - link [ref=e769] [cursor=pointer]:
+            - /url: /search/sql-jobs
+            - button [ref=e770]:
+              - paragraph [ref=e771]: Sql
+          - link [ref=e773] [cursor=pointer]:
+            - /url: /search/java-jobs
+            - button [ref=e774]:
+              - paragraph [ref=e775]: Java
+          - link [ref=e777] [cursor=pointer]:
+            - /url: /search/aws-jobs
+            - button [ref=e778]:
+              - paragraph [ref=e779]: AWS
+          - link [ref=e781] [cursor=pointer]:
+            - /url: /search/excel-jobs
+            - button [ref=e782]:
+              - paragraph [ref=e783]: Excel
+          - link [ref=e785] [cursor=pointer]:
+            - /url: /search/git-jobs
+            - button [ref=e786]:
+              - paragraph [ref=e787]: Git
+          - link [ref=e789] [cursor=pointer]:
+            - /url: /search/javascript-jobs
+            - button [ref=e790]:
+              - paragraph [ref=e791]: Javascript
+          - link [ref=e793] [cursor=pointer]:
+            - /url: /search/kubernetes-jobs
+            - button [ref=e794]:
+              - paragraph [ref=e795]: Kubernetes
+          - link [ref=e797] [cursor=pointer]:
+            - /url: /search/docker-jobs
+            - button [ref=e798]:
+              - paragraph [ref=e799]: Docker
+          - link [ref=e801] [cursor=pointer]:
+            - /url: /search/azure-jobs
+            - button [ref=e802]:
+              - paragraph [ref=e803]: Azure
+          - link [ref=e805] [cursor=pointer]:
+            - /url: /search/sales-jobs
+            - button [ref=e806]:
+              - paragraph [ref=e807]: Sales
+          - link [ref=e809] [cursor=pointer]:
+            - /url: /search/refer-to-the-job-description-jobs
+            - button [ref=e810]:
+              - paragraph [ref=e811]: Refer to the Job Description
+          - link [ref=e813] [cursor=pointer]:
+            - /url: /search/ms-office-jobs
+            - button [ref=e814]:
+              - paragraph [ref=e815]: Ms Office
+          - link [ref=e817] [cursor=pointer]:
+            - /url: /search/power-bi-jobs
+            - button [ref=e818]:
+              - paragraph [ref=e819]: Power Bi
+          - link [ref=e821] [cursor=pointer]:
+            - /url: /search/data-analysis-jobs
+            - button [ref=e822]:
+              - paragraph [ref=e823]: Data Analysis
+          - link [ref=e825] [cursor=pointer]:
+            - /url: /search/gcp-jobs
+            - button [ref=e826]:
+              - paragraph [ref=e827]: Gcp
+          - link [ref=e829] [cursor=pointer]:
+            - /url: /search/lead-generation-jobs
+            - button [ref=e830]:
+              - paragraph [ref=e831]: Lead Generation
+          - link [ref=e833] [cursor=pointer]:
+            - /url: /search/rest-apis-jobs
+            - button [ref=e834]:
+              - paragraph [ref=e835]: Rest Apis
+          - link [ref=e837] [cursor=pointer]:
+            - /url: /search/typescript-jobs
+            - button [ref=e838]:
+              - paragraph [ref=e839]: Typescript
+          - link [ref=e841] [cursor=pointer]:
+            - /url: /search/terraform-jobs
+            - button [ref=e842]:
+              - paragraph [ref=e843]: Terraform
+        - link "View all jobs by Skills" [ref=e844] [cursor=pointer]:
+          - /url: /search/jobs-by-skill
+  - generic [ref=e847]:
+    - generic [ref=e848]:
+      - generic [ref=e849]:
+        - generic [ref=e850]: Beware of Scammers
+        - paragraph [ref=e854]: We don’t charge money for job offers
+      - link "Know More" [ref=e856] [cursor=pointer]:
+        - /url: /info/besafe
+    - contentinfo [ref=e859]:
+      - generic [ref=e861]:
+        - tablist [ref=e863]:
+          - tab "Browse Jobs by" [selected] [ref=e864] [cursor=pointer]
+          - tab "Trending Jobs" [ref=e865] [cursor=pointer]
+          - tab "Services" [ref=e866] [cursor=pointer]
+          - tab "Trending Skills" [ref=e867] [cursor=pointer]
+          - tab "Trending Jobs by Role" [ref=e868] [cursor=pointer]
+          - tab "Top Companies" [ref=e869] [cursor=pointer]
+          - tab "Career Advice" [ref=e870] [cursor=pointer]
+          - tab "Jobs by Location" [ref=e871] [cursor=pointer]
+          - tab "Career Courses" [ref=e872] [cursor=pointer]
+        - tabpanel "Browse Jobs by" [ref=e873]:
+          - list [ref=e874]:
+            - listitem [ref=e875]:
+              - link "Jobs By Skill" [ref=e876] [cursor=pointer]:
+                - /url: https://www.foundit.in/search/jobs-by-skill
+            - listitem [ref=e877]:
+              - link "Jobs By Education" [ref=e878] [cursor=pointer]:
+                - /url: https://www.foundit.in/search/jobs-by-education
+            - listitem [ref=e879]:
+              - link "Jobs By Location" [ref=e880] [cursor=pointer]:
+                - /url: https://www.foundit.in/search/jobs-by-location
+            - listitem [ref=e881]:
+              - link "Jobs By Function" [ref=e882] [cursor=pointer]:
+                - /url: https://www.foundit.in/search/jobs-by-function
+            - listitem [ref=e883]:
+              - link "Jobs By Industry" [ref=e884] [cursor=pointer]:
+                - /url: https://www.foundit.in/search/jobs-by-industry
+            - listitem [ref=e885]:
+              - link "Jobs By Title" [ref=e886] [cursor=pointer]:
+                - /url: https://www.foundit.in/search/jobs-by-title
+            - listitem [ref=e887]:
+              - link "Jobs By Other" [ref=e888] [cursor=pointer]:
+                - /url: https://www.foundit.in/search/jobs-by-other
+      - generic [ref=e892]:
+        - generic [ref=e893]:
+          - generic [ref=e894]:
+            - generic [ref=e895]: Company Info
+            - generic [ref=e896]:
+              - link "company-info" [ref=e897] [cursor=pointer]:
+                - /url: https://www.foundit.in/info/about-us
+                - text: About Us
+              - link "company-info" [ref=e898] [cursor=pointer]:
+                - /url: https://www.foundit.in/info/feedback
+                - text: Send Feedback
+              - link "company-info" [ref=e899] [cursor=pointer]:
+                - /url: https://www.foundit.in/info/sitemap
+                - text: Sitemap
+          - generic [ref=e900]:
+            - generic [ref=e901]:
+              - generic [ref=e902]: Selected Country
+              - combobox "Selected Country" [ref=e904]:
+                - option "India" [selected]
+                - option "Gulf"
+                - option "Hong Kong"
+                - option "Singapore"
+                - option "Philippines"
+                - option "Thailand"
+                - option "Vietnam"
+                - option "Indonesia"
+                - option "Malaysia"
+            - generic [ref=e905]:
+              - generic [ref=e906]: Stay Connected
+              - generic [ref=e907]:
+                - link "stay-connected" [ref=e908] [cursor=pointer]:
+                  - /url: https://www.facebook.com/founditIN/
+                - link "stay-connected" [ref=e910] [cursor=pointer]:
+                  - /url: https://twitter.com/foundit_India
+                - link "stay-connected" [ref=e912] [cursor=pointer]:
+                  - /url: https://www.linkedin.com/company/foundit-jobs/
+                - link "stay-connected" [ref=e914] [cursor=pointer]:
+                  - /url: https://www.instagram.com/foundit_india/
+                - link "stay-connected" [ref=e916] [cursor=pointer]:
+                  - /url: https://www.youtube.com/@foundit_IN/featured
+          - generic [ref=e918]:
+            - generic [ref=e919]: 24/7 Support
+            - generic [ref=e921]:
+              - generic [ref=e922]:
+                - generic [ref=e923]: "Toll No:"
+                - link "contact-info" [ref=e924] [cursor=pointer]:
+                  - /url: tel:+91 80 6985 7811
+                  - text: +91 80 6985 7811
+              - generic [ref=e925]:
+                - generic [ref=e926]: "Toll Free No:"
+                - link "contact-info" [ref=e927] [cursor=pointer]:
+                  - /url: tel:1800-419-6666
+                  - text: 1800-419-6666
+            - link "mail" [ref=e930] [cursor=pointer]:
+              - /url: mailto:info@foundit.in
+              - text: info@foundit.in
+            - link "contact-us" [ref=e934] [cursor=pointer]:
+              - /url: https://www.foundit.in/info/contact-us
+              - text: Contact Us
+          - generic [ref=e935]:
+            - generic [ref=e936]: Download the App
+            - generic [ref=e937]:
+              - generic [ref=e938]:
+                - link "Get it on Google Play" [ref=e939] [cursor=pointer]:
+                  - /url: https://play.google.com/store/apps/details?id=com.monsterindia.seeker.views
+                  - generic [ref=e942]:
+                    - generic [ref=e943]: Get it on
+                    - generic [ref=e944]: Google Play
+                - link "Download on the App Store" [ref=e945] [cursor=pointer]:
+                  - /url: https://apps.apple.com/in/app/monster-jobs/id525775161
+                  - generic [ref=e948]:
+                    - generic [ref=e949]: Download on the
+                    - generic [ref=e950]: App Store
+              - generic [ref=e951]:
+                - img "foundit app scanner" [ref=e952]
+                - generic [ref=e953]: Scan to download App
+        - generic [ref=e954]:
+          - generic [ref=e955]:
+            - generic [ref=e956]:
+              - link "legal" [ref=e957] [cursor=pointer]:
+                - /url: https://www.foundit.in/info/help
+                - text: Help
+              - text: "|"
+            - generic [ref=e958]:
+              - link "legal" [ref=e959] [cursor=pointer]:
+                - /url: https://www.foundit.in/info/security-center
+                - text: Security & Fraud
+              - text: "|"
+            - generic [ref=e960]:
+              - link "legal" [ref=e961] [cursor=pointer]:
+                - /url: https://www.foundit.in/info/privacy
+                - text: Privacy Policy
+              - text: "|"
+            - generic [ref=e962]:
+              - link "legal" [ref=e963] [cursor=pointer]:
+                - /url: https://www.foundit.in/info/terms-of-use
+                - text: Terms of Use
+              - text: "|"
+            - generic [ref=e964]:
+              - link "legal" [ref=e965] [cursor=pointer]:
+                - /url: https://www.foundit.in/info/besafe
+                - text: Be Safe
+              - text: "|"
+            - generic [ref=e966]:
+              - link "legal" [ref=e967] [cursor=pointer]:
+                - /url: https://www.foundit.in/info/complaints
+                - text: Complaints
+              - text: "|"
+            - link "legal" [ref=e969] [cursor=pointer]:
+              - /url: https://www.foundit.in/info/beware-of-fraudsters
+              - text: Beware of Fraudsters
+          - generic [ref=e970]:
+            - generic [ref=e971]: © 2026 foundit
+            - generic [ref=e972]: "|"
+            - generic [ref=e973]: All rights Reserved
+  - alert [ref=e974]
+  - generic [ref=e977]:
+    - paragraph [ref=e978]:
+      - text: We use cookies to improve your experience. By continuing to browse the site, you agree to our
+      - link "Privacy Policy" [ref=e979] [cursor=pointer]:
+        - /url: https://www.foundit.in/info/privacy
+      - text: and
+      - link "Cookie Policy" [ref=e980] [cursor=pointer]:
+        - /url: https://www.foundit.in/info/privacy#cookie-heading
+    - button "Okay" [ref=e982] [cursor=pointer]
+```
+
+# Test source
+
+```ts
+  1  | const {test, expect}=require('@playwright/test')
+  2  | 
+  3  | test.only('Single File',async ({page})=>{
+  4  | 
+  5  |     await page.goto('https://www.foundit.in/');
+  6  | 
+> 7  |     await page.waitForSelector('.mqfihd-upload');
+     |                ^ Error: page.waitForSelector: Test timeout of 30000ms exceeded.
+  8  |     await page.locator('.mqfihd-upload').click()
+  9  |     
+  10 |     //Upload file
+  11 |     await page.locator('#file-upload').setInputFiles('tests/uploadFiles/file1.txt');
+  12 |     
+  13 |     await page.waitForTimeout(5000); 
+  14 | 
+  15 | })
+  16 | 
+  17 | test.skip('Multiple Files',async ({page})=>{
+  18 | 
+  19 |     await page.goto('https://davidwalsh.name/demo/multiple-file-upload.php');
+  20 |        
+  21 |     //upload multiple files
+  22 |     await page.locator('#filesToUpload')
+  23 |                  .setInputFiles(['tests/uploadFiles/testfile1.pdf', 
+  24 |                     'tests/uploadFiles/testfile2.pdf']);
+  25 | 
+  26 |     await page.waitForTimeout(3000); 
+  27 |        
+  28 |     expect(await page.locator('#fileList li:nth-child(1)')).toHaveText('file1.txt')
+  29 |     expect(await page.locator('#fileList li:nth-child(2)')).toHaveText('file1.txt')
+  30 |    
+  31 |     // Remove all the selected files
+  32 |     await page.locator('#filesToUpload').setInputFiles([]);
+  33 |     await page.waitForTimeout(3000);
+  34 |     expect(await page.locator('#fileList li:nth-child(1)')).toHaveText('No Files Selected')
+  35 |     await page.waitForTimeout(5000);
+  36 | })
+  37 | 
+```

@@ -1,0 +1,21 @@
+<html>
+<body>
+    <input id='val1'></input>
+    <input id='val2'></input>
+<br>
+    <button id="addBtn"> Add</button>
+
+<p id="Result"></p>
+</body>
+
+<script>
+    document.getElementById("addBtn").onclick=addition;
+
+function addition(){
+        let a = document.getElementById("val1").value;
+        let b = document.getElementById("val1").value;
+        let res = parseInt(a)+parseInt(b);
+        document.getElementById("Result").innerHTML = res;
+}
+</script>
+</html>

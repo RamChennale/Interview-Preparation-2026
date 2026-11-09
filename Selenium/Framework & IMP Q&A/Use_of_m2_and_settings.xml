@@ -1,0 +1,47 @@
+##.m2 and settings.xml
+
+
+“.m2/repository is the cache of downloaded dependencies, and 
+settings.xml next to it holds the machine-level configuration: proxy, mirrors, repository credentials and the local repository path. 
+The pom.xml describes the project, while settings.xml describes the environment, so the same project builds on any machine or network.”
+
+
+
+
+ ##settings.xml - Why it matters for your framework ??
+ 
+On a corporate network, builds can fail with “could not transfer artifact” until the proxy or mirror is set here.
+Jenkins agents use it for repository credentials, so passwords stay out of the pom.xml.
+
+
+<-- It holds settings about your machine and network, not about a project (that’s what pom.xml is for). The main sections: -->
+
+Section	Purpose
+<localRepository>	Moves the local repository (the repository folder you opened) to another path or drive
+<proxies>	Proxy host, port and login, needed on a corporate network
+<mirrors>	Redirects downloads to a company Nexus/Artifactory instead of Maven Central
+<servers>	Usernames and passwords for private repositories (matched by <id>)
+<profiles> / <activeProfiles>
+
+
+<settings>
+  <localRepository>D:/maven-repo</localRepository>
+
+  <proxies>
+    <proxy>
+      <id>office-proxy</id>
+      <active>true</active>
+      <protocol>http</protocol>
+      <host>proxy.company.com</host>
+      <port>8080</port>
+    </proxy>
+  </proxies>
+
+  <mirrors>
+    <mirror>
+      <id>company-nexus</id>
+      <mirrorOf>*</mirrorOf>
+      <url>https://nexus.company.com/repository/maven-public/</url>
+    </mirror>
+  </mirrors>
+</settings>
